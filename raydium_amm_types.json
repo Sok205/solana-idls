@@ -1,0 +1,284 @@
+[
+  {
+    "name": "WithdrawDestToken",
+    "type": {
+      "kind": "struct",
+      "fields": [
+        {
+          "name": "withdrawAmount",
+          "type": "u64"
+        },
+        {
+          "name": "coinAmount",
+          "type": "u64"
+        },
+        {
+          "name": "pcAmount",
+          "type": "u64"
+        },
+        {
+          "name": "destTokenCoin",
+          "type": "publicKey"
+        },
+        {
+          "name": "destTokenPc",
+          "type": "publicKey"
+        }
+      ]
+    }
+  },
+  {
+    "name": "WithdrawQueue",
+    "type": {
+      "kind": "struct",
+      "fields": [
+        {
+          "name": "owner",
+          "type": {
+            "array": [
+              "u64",
+              4
+            ]
+          }
+        },
+        {
+          "name": "head",
+          "type": "u64"
+        },
+        {
+          "name": "count",
+          "type": "u64"
+        },
+        {
+          "name": "buf",
+          "type": {
+            "array": [
+              {
+                "defined": "WithdrawDestToken"
+              },
+              64
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "TargetOrder",
+    "type": {
+      "kind": "struct",
+      "fields": [
+        {
+          "name": "price",
+          "type": "u64"
+        },
+        {
+          "name": "vol",
+          "type": "u64"
+        }
+      ]
+    }
+  },
+  {
+    "name": "OutPutData",
+    "type": {
+      "kind": "struct",
+      "fields": [
+        {
+          "name": "needTakePnlCoin",
+          "type": "u64"
+        },
+        {
+          "name": "needTakePnlPc",
+          "type": "u64"
+        },
+        {
+          "name": "totalPnlPc",
+          "type": "u64"
+        },
+        {
+          "name": "totalPnlCoin",
+          "type": "u64"
+        },
+        {
+          "name": "poolOpenTime",
+          "type": "u64"
+        },
+        {
+          "name": "punishPcAmount",
+          "type": "u64"
+        },
+        {
+          "name": "punishCoinAmount",
+          "type": "u64"
+        },
+        {
+          "name": "orderbookToInitTime",
+          "type": "u64"
+        },
+        {
+          "name": "swapCoinInAmount",
+          "type": "u128"
+        },
+        {
+          "name": "swapPcOutAmount",
+          "type": "u128"
+        },
+        {
+          "name": "swapTakePcFee",
+          "type": "u64"
+        },
+        {
+          "name": "swapPcInAmount",
+          "type": "u128"
+        },
+        {
+          "name": "swapCoinOutAmount",
+          "type": "u128"
+        },
+        {
+          "name": "swapTakeCoinFee",
+          "type": "u64"
+        }
+      ]
+    }
+  },
+  {
+    "name": "AmmConfig",
+    "type": {
+      "kind": "struct",
+      "fields": [
+        {
+          "name": "pnlOwner",
+          "type": "publicKey"
+        },
+        {
+          "name": "cancelOwner",
+          "type": "publicKey"
+        },
+        {
+          "name": "pending1",
+          "type": {
+            "array": [
+              "u64",
+              28
+            ]
+          }
+        },
+        {
+          "name": "pending2",
+          "type": {
+            "array": [
+              "u64",
+              32
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "LastOrderDistance",
+    "type": {
+      "kind": "struct",
+      "fields": [
+        {
+          "name": "lastOrderNumerator",
+          "type": "u64"
+        },
+        {
+          "name": "lastOrderDenominator",
+          "type": "u64"
+        }
+      ]
+    }
+  },
+  {
+    "name": "NeedTake",
+    "type": {
+      "kind": "struct",
+      "fields": [
+        {
+          "name": "needTakePc",
+          "type": "u64"
+        },
+        {
+          "name": "needTakeCoin",
+          "type": "u64"
+        }
+      ]
+    }
+  },
+  {
+    "name": "SwapInstructionBaseIn",
+    "type": {
+      "kind": "struct",
+      "fields": [
+        {
+          "name": "amountIn",
+          "type": "u64"
+        },
+        {
+          "name": "minimumAmountOut",
+          "type": "u64"
+        }
+      ]
+    }
+  },
+  {
+    "name": "SwapInstructionBaseOut",
+    "type": {
+      "kind": "struct",
+      "fields": [
+        {
+          "name": "maxAmountIn",
+          "type": "u64"
+        },
+        {
+          "name": "amountOut",
+          "type": "u64"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Fees",
+    "type": {
+      "kind": "struct",
+      "fields": [
+        {
+          "name": "minSeparateNumerator",
+          "type": "u64"
+        },
+        {
+          "name": "minSeparateDenominator",
+          "type": "u64"
+        },
+        {
+          "name": "tradeFeeNumerator",
+          "type": "u64"
+        },
+        {
+          "name": "tradeFeeDenominator",
+          "type": "u64"
+        },
+        {
+          "name": "pnlNumerator",
+          "type": "u64"
+        },
+        {
+          "name": "pnlDenominator",
+          "type": "u64"
+        },
+        {
+          "name": "swapFeeNumerator",
+          "type": "u64"
+        },
+        {
+          "name": "swapFeeDenominator",
+          "type": "u64"
+        }
+      ]
+    }
+  }
+]
